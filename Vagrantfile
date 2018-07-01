@@ -63,12 +63,12 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such asrm
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  # config.vm.provision "shell", inline: <<-SHELL
+  config.vm.provision "shell", inline: <<-SHELL
      apt-get update
      apt-get install -y apache2
      rm -rf /var/html
      ln -fs /vagrant/SpotMyBackup /var/www/html
      apt-get install -y git
      git clone "https://github.com/secuvera/SpotMyBackup.git" /vagrant/SpotMyBackup
-  # SHELL
+  SHELL
 end
